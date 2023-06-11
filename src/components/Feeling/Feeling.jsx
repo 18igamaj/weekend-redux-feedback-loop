@@ -11,8 +11,9 @@ const handleClick = () => {
 
     return (
             <>
-        <label>How are you Feeling?</label>
+        <h1>How are you Feeling?</h1>
         <br></br>
+        <label>Feeling?</label>
         <input type="number"
         placeholder="Feeling?"
         onChange={(e) => setFeeling(e.target.value)} />

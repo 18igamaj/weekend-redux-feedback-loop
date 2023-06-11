@@ -1,23 +1,23 @@
 import { useHistory } from "react-router-dom"
 
 
-function Understanding({setUnder}) {
+function Support({setSupport}) {
 
 const history = useHistory()
 
 const handleClick = () => {
-    history.pushState('/support')
+    history.pushState('/comments')
 }
 
     return (
             <>
-          <h1>How are you Understanding?</h1>
+          <h1>How well are you Supported?</h1>
         <br></br>
-        <label>Understanding?</label>
+        <label>Support?</label>
         <br></br>
         <input type="number"
-        placeholder="Understanding?"
-        onChange={(e) => setUnder(e.target.value)} />
+        placeholder="Support?"
+        onChange={(e) => setSupport(e.target.value)} />
   <button onClick={handleClick}>
      Next
     </button>
@@ -28,4 +28,4 @@ const handleClick = () => {
  )
 }
 
-export default Understanding
+export default Support
