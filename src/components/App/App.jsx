@@ -6,8 +6,10 @@ import { useDispatch } from 'react-redux';
 import Feeling from '../Feeling/Feeling';
 import Understanding from '../Understanding/Understanding';
 import Support from '../Support/Support'
+import Comments from '../Comments/Comments'
 import { HashRouter as Router,Route,Link } from 'react-router-dom';
 import {FeedList} from '../FeedList/FeedList'
+import Review from '../Review/Review';
 
 
 
@@ -51,7 +53,18 @@ function App() {
     }).catch(err => {
       console.log('something is wrong with Post', err)
     })
+//  const handlePost =  (event) => {
+//   event.preventDefault()
+
+
+//  }
+    
   }
+
+  // const handleFR = () => {
+
+    
+  // }
 
   return (
     <Router>
@@ -69,18 +82,21 @@ function App() {
 
 
 
-      <form onSubmit={handlePost}>
+      <form onSubmit={(event) => handlePost((event))}>
         <Route path="/" exact>
-        <Feeling setFeeling= {setFeeling} />
+        <Feeling feeling={feeling} setFeeling= {setFeeling} />
         </Route>
         <Route path="/understanding" exact>
-        < Understanding setUnder= {setUnder} />
+        < Understanding understanding={understanding} setUnder= {setUnder} />
         </Route>
         <Route path="/support" exact>
-        <Support setSupport= {setSupport} />
+        <Support support={support} setSupport= {setSupport} />
         </Route>
         <Route path="/comments" exact>
-        <Feeling setComments= {setComments} />
+        <Comments comments={comments} setComments= {setComments} />
+        </Route>
+        <Route path="/review" exact>
+        <Review  />
         </Route>
       </form>
       

@@ -1,12 +1,20 @@
 import { useHistory } from "react-router-dom"
+import { useSelector, useDispatch } from "react-redux"
 
-
-function Understanding({setUnder}) {
+function Understanding({setUnder, understanding}) {
 
 const history = useHistory()
+const review = useSelector(state => state.review)
+const dispatch = useDispatch()
 
-const handleClick = () => {
-    history.pushState('/support')
+const handleUnderClick = () => {
+
+    dispatch({
+        type: 'ADD_REVIEW',
+        payload: {understanding}
+      })
+
+    history.push('/support')
 }
 
     return (
@@ -18,7 +26,7 @@ const handleClick = () => {
         <input type="number"
         placeholder="Understanding?"
         onChange={(e) => setUnder(e.target.value)} />
-  <button onClick={handleClick}>
+  <button onClick={handleUnderClick}>
      Next
     </button>
             </>

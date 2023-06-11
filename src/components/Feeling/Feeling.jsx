@@ -1,12 +1,21 @@
 import { useHistory } from "react-router-dom"
-
-
-function Feeling({setFeeling}) {
+import { useDispatch } from "react-redux"
+import { useSelector } from "react-redux"
+function Feeling({setFeeling, feeling}) {
 
 const history = useHistory()
 
-const handleClick = () => {
-    history.pushState('/understanding')
+const review = useSelector(store => store.review)
+
+const dispatch = useDispatch()
+
+const handleFeelClick = () => {
+    history.push('/understanding')
+
+    dispatch({
+        type: 'ADD_REVIEW',
+        payload: {feeling}
+      }) 
 }
 
     return (
@@ -17,7 +26,7 @@ const handleClick = () => {
         <input type="number"
         placeholder="Feeling?"
         onChange={(e) => setFeeling(e.target.value)} />
-  <button onClick={handleClick}>
+  <button onClick={handleFeelClick}>
      Next
     </button>
             </>

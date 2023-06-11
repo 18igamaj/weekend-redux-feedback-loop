@@ -14,9 +14,19 @@ const feedBackList = (state = [], action) => {
     return state
 }
 
+const review = (state = [], action) => {
+    if(action.type === 'ADD_REVIEW'){
+        return [...state, action.payload]
+    }
+    else if (action.type === 'NEW_REVIEW'){
+        return []
+    }
+    return state
+}
+
 const feedStore = createStore(
     combineReducers({
-        feedBackList
+        feedBackList, review
     }), applyMiddleware(logger)
 )
 

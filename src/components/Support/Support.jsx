@@ -1,12 +1,21 @@
 import { useHistory } from "react-router-dom"
+import { useSelector, useDispatch } from "react-redux"
 
-
-function Support({setSupport}) {
+function Support({setSupport, support}) {
 
 const history = useHistory()
 
-const handleClick = () => {
-    history.pushState('/comments')
+const review = useSelector(state => state.review)
+const dispatch = useDispatch()
+
+
+const handleSupportClick = () => {
+    history.push('/comments')
+
+    dispatch({
+        type: 'ADD_REVIEW',
+        payload: {support}
+      })
 }
 
     return (
@@ -18,7 +27,7 @@ const handleClick = () => {
         <input type="number"
         placeholder="Support?"
         onChange={(e) => setSupport(e.target.value)} />
-  <button onClick={handleClick}>
+  <button onClick={handleSupportClick}>
      Next
     </button>
             </>
