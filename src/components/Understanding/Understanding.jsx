@@ -26,4 +26,4 @@ const handleClick = () => {
  )
 }
 
-export default Understanding
+export default Feeling
