@@ -16,7 +16,7 @@ const feedBackList = (state = [], action) => {
 
 const review = (state = [], action) => {
     if(action.type === 'ADD_REVIEW'){
-        return [...state, action.payload]
+        return {...state, ...action.payload}
     }
     else if (action.type === 'NEW_REVIEW'){
         return []

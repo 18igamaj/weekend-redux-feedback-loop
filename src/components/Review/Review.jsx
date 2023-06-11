@@ -22,18 +22,19 @@ function Review() {
         <>
         <h2>Review Your Feedback</h2>
          <div>
-            {review.map((feed, i) => (
-              <div key = {i}>
-              <div>  <h3>  Feeling <span>{feed.feeling} </span> </h3> </div>
-                <br></br>
-                <h3> Understanding:<span>{feed.understanding}</span></h3>
-                <br></br>
-                <h3> Support: <span>{feed.support}</span> </h3> 
-                <br></br>
-                <h3> Comments: <span>{feed.comments} </span> </h3> 
+           
+              <div>
+                <h3> Feeling: <span>{review.feeling}</span></h3>
+                
+                <h3> Understanding:  <span> {review.understanding}</span></h3>
+               
+                <h3> Support: <span> {review.support}</span></h3>
+                
+                <h3> Comments:  <span>  {review.comments}</span></h3>
+               
                 <br></br>
               </div>
-            ))}
+         
          </div>
          <button type="submit">Submit</button>
          <button onClick={handleReview}>Thank you!</button>
