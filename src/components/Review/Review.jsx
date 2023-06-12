@@ -15,7 +15,7 @@ function Review() {
     
     
     
-        history.push('/')
+        history.push('/thanks')
     }
 
     return (
@@ -36,8 +36,7 @@ function Review() {
               </div>
          
          </div>
-         <button type="submit">Submit</button>
-         <button onClick={handleReview}>Thank you!</button>
+         <button onClick={handleReview}>Thanks!</button>
         
         </>
     )

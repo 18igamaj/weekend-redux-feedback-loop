@@ -10,6 +10,8 @@ import Comments from '../Comments/Comments'
 import { HashRouter as Router,Route,Link } from 'react-router-dom';
 import {FeedList} from '../FeedList/FeedList'
 import Review from '../Review/Review';
+import Thank from '../Thank/Thank'
+import {useHistory} from 'react-router-dom'
 
 
 
@@ -44,6 +46,8 @@ function App() {
     axios.post('/feedback', {feeling,understanding,support,comments})
     .then(response => {
       getFeedBack()
+
+      
 
       //this will clear my inputs
       setFeeling('')
@@ -97,6 +101,9 @@ function App() {
         </Route>
         <Route path="/review" exact>
         <Review  />
+        </Route>
+        <Route path="/thanks" exact>
+        <Thank  />
         </Route>
       </form>
       
